@@ -12,10 +12,9 @@ class Estudiante(models.Model):
     apellidoMaterno=models.charField(max_length=35)
     nombres = models.CharField(max_length=35)
     fechaNacimiento=models.DateField()
-    sexos =  [ 
+    sexos = [ 
         ('F','Femenino'),
-        ('M','Masculino')
-     ]
+        ('M','Masculino')]
      sexo = models.CharField(max_length=1,choices=sexos,default='F')
      carrera= models.foreingKey(Carrera,null=False,blank=False,on_delate=models.CASCADE)
      vigencia= models.BooleanField(default=True)
